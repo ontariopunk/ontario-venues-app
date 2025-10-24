@@ -31,7 +31,15 @@ export const handler: Handler = async () => {
         },
     });
 
-    const jsonString = response.text ? response.text.trim() : "[]";
+    if (!response || !response.text) {
+        console.error("No text in response from Gemini API");
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: "Failed to get a valid response from the AI model." }),
+        };
+    }
+
+    const jsonString = response.text.trim();
     
     return {
       statusCode: 200,
