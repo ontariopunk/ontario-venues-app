@@ -1,0 +1,5 @@
+{
+  "name": "Ontario Music Venues",
+  "description": "A web application that lists all music venues and their addresses in Ontario, Canada, using the Gemini API to fetch the data.",
+  "requestFramePermissions": []
+}
