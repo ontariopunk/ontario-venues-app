@@ -31,7 +31,7 @@ export const handler: Handler = async () => {
         },
     });
 
-    const jsonString = response.text.trim();
+    const jsonString = response.text ? response.text.trim() : "[]";
     
     return {
       statusCode: 200,
